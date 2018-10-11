@@ -1,0 +1,7 @@
+/*
+** INHERIT
+**  Tower
+** 
+** USE
+**	Coordinates
+*/

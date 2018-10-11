@@ -1,0 +1,6 @@
+/*
+** INHERIT
+** 
+** USE
+**      WeatherTower
+*/

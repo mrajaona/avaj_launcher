@@ -1,0 +1,7 @@
+/*
+** INHERIT
+** 
+** USE
+**	Flyable
+**	Coordinates
+*/
