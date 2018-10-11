@@ -26,11 +26,11 @@ $(NAME)		:
 				@$(ECHO) "\033[32m> Executable compiled\033[0m\n"
 
 clean		:
-				@$(RM) $(CLASSES)
+				@$(RM) sources.txt
 				@$(ECHO) "\033[31m> Directory cleaned\033[0m\n"
 
 fclean		:	clean
-				@$(RM) $(NAME)
+				@$(RM) $(CLASSES) $(NAME)
 				@$(ECHO) "\033[31m> Removed executable\033[0m\n"
 
 re			:	fclean all
