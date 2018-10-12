@@ -1,9 +1,9 @@
-package java.elements.aircraft;
+package avaj.elements.aircraft;
 
 public class Coordinates {
     
-    private static final int COORD_MIN 0;
-    private static final int COORD_MAX 100;
+    private static final int COORD_MIN  = 0;
+    private static final int COORD_MAX  = 100;
 
     private int longitude;
     private int latitude;
@@ -21,6 +21,9 @@ public class Coordinates {
         return (value);
     }
 
+    private Coordinates() {}
+
+    // Initialized by AircraftFactory
     Coordinates(int lo, int la, int he) {
         longitude   = checkCoord(lo);
         latitude    = checkCoord(la);
