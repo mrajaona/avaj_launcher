@@ -3,19 +3,18 @@ package avaj.elements.weathertower;
 import avaj.elements.flyable.Flyable;
 import avaj.elements.aircraft.Coordinates;
 
-import java.util.List;
 import java.util.ArrayList;
 
 public class Tower {
 
-    private List <Flyable> observers = new ArrayList <Flyable> ();
+    private ArrayList <Flyable> observers = new ArrayList <Flyable> ();
 
     public void register(Flyable flyable) {
-
+        observers.add(flyable);
     }
 
     public void unregister(Flyable flyable) {
-        // delete by id
+        observers.remove(flyable);
     }
 
     protected void conditionsChanged() {
