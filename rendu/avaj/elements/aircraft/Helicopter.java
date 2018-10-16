@@ -8,7 +8,7 @@ import avaj.elements.aircraft.Coordinates;
 
 public class Helicopter extends Aircraft implements Flyable {
 
-    private static final TYPE = "Helicopter";
+    private static final String TYPE = "Helicopter";
     private WeatherTower weatherTower;
 
     Helicopter(String name, Coordinates coordinates) {
@@ -30,8 +30,7 @@ public class Helicopter extends Aircraft implements Flyable {
         weatherTower = tower;
     }
 
-    @Override
-    public void land() {
+    private void land() {
         weatherTower.unregister(this);
         // TO DO : log current coordinates
     }
