@@ -4,7 +4,7 @@ public class Aircraft {
 
 	protected long id;
 	protected String name;
-	protected Coordinates coordinates; // TO DO : Destroyed with Aircraft
+	protected Coordinates coordinates; // TO DO : check destroyed with Aircraft
 
 	private static long idCounter = 0;
 
