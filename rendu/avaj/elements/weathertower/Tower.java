@@ -34,8 +34,6 @@ public class Tower {
         for (Flyable observer : tmpList) {
             observer.updateConditions();
         }
-
-        tmpList.clear();
     }
 
 }
