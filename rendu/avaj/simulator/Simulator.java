@@ -14,6 +14,12 @@ public class Simulator {
         Flyable aircraftA = factory.newAircraft("type A", "nameA", 0, 1, 2);
         Flyable aircraftB = factory.newAircraft("type B", "nameB", 10, 11, 12);
         Flyable aircraftC = factory.newAircraft("type C", "nameC", 20, 21, 22);
+
+        aircraftA.registerTower(tower);
+        aircraftB.registerTower(tower);
+        aircraftC.registerTower(tower);
+
+        tower.runSimulation(3);
     }
 
 }

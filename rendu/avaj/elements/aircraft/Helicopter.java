@@ -6,6 +6,8 @@ import avaj.elements.flyable.Flyable;
 import avaj.elements.weathertower.WeatherTower;
 import avaj.elements.aircraft.Coordinates;
 
+import avaj.elements.weatherprovider.WeatherProvider;
+
 public class Helicopter extends Aircraft implements Flyable {
 
     private static final String TYPE = "Helicopter";
@@ -16,18 +18,45 @@ public class Helicopter extends Aircraft implements Flyable {
     }
 
     private void log(String message) {
-        System.out.println(TYPE + "#" + name + "(" + id + "): " + message);
+        System.out.println(identify() + ": " + message);
     }
 
     @Override
     public void updateConditions() {
+        final String weather = weatherTower.getWeather(coordinates);
 
+        switch (weather) {
+            case WeatherProvider.RAIN :
+                log("I'm singing in the rain.");
+                coordinates.editLongitude(5);
+                break;
+            case WeatherProvider.FOG :
+                log("I can't see.");
+                coordinates.editLongitude(1);
+                break;
+            case WeatherProvider.SNOW :
+                log("it's cold here.");
+                coordinates.editHeight(-12);
+                break ;
+            case WeatherProvider.SUN :
+                log("So bright.");
+                coordinates.editLongitude(10);
+                coordinates.editHeight(2);
+                break ;
+            default :
+                // ERROR
+        }
     }
 
     @Override
     public void registerTower(WeatherTower tower) {
         tower.register(this);
         weatherTower = tower;
+    }
+
+    @Override
+    public String identify() {
+        return (TYPE + "#" + name + "(" + id + ")");
     }
 
     private void land() {

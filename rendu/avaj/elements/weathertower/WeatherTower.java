@@ -6,13 +6,19 @@ import avaj.elements.weatherprovider.WeatherProvider;
 public class WeatherTower extends Tower {
 
     public String getWeather(Coordinates coordinates) {
-        // TO DO : get associated weather
-        // return (weatherProvider.getCurrentWeather(coordinates));
-        return ("SUN");
+        WeatherProvider provider    = WeatherProvider.getProvider();
+
+        return( provider.getCurrentWeather(coordinates) );
     }
 
     void changeWeather() {
-        // TO DO : update all coordinates
         conditionsChanged();
+    }
+
+    public void runSimulation(int nbSimulation) {
+        while (nbSimulation >= 0) {
+            changeWeather();
+            nbSimulation -= 1;
+        }
     }
 }

@@ -9,16 +9,24 @@ public class Tower {
 
     private ArrayList <Flyable> observers = new ArrayList <Flyable> ();
 
+    private void log(String message) {
+        System.out.println("Tower says: " + message);
+    }
+
     public void register(Flyable flyable) {
         observers.add(flyable);
+        log(flyable.identify() + " registered to weather tower.");
     }
 
     public void unregister(Flyable flyable) {
         observers.remove(flyable);
+        log(flyable.identify() + " unregistered from weather tower.");
     }
 
     protected void conditionsChanged() {
-        // flyable.updateConditions();
+        for (Flyable observer : observers) {
+            observer.updateConditions();
+        }
     }
 
 }
