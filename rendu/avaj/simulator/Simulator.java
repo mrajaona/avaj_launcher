@@ -19,7 +19,7 @@ public class Simulator {
         aircraftB.registerTower(tower);
         aircraftC.registerTower(tower);
 
-        tower.runSimulation(3);
+        tower.runSimulation(10);
     }
 
 }

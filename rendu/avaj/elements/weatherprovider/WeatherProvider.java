@@ -25,8 +25,13 @@ public class WeatherProvider {
     }
 
     public String getCurrentWeather(Coordinates coordinates) {
-        // TO DO
-        return (SNOW);
+        int seed = coordinates.getLongitude() + coordinates.getLatitude() - coordinates.getHeight();
+        seed = seed / 5;
+        seed = seed < 0 ? -seed : seed;
+
+        // System.out.println(coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight() + " -> " + seed + " -> " + seed % 4); // DEBUG
+
+        return (weather[seed % 4]);
     }
 
 }

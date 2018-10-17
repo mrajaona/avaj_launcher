@@ -35,7 +35,7 @@ public class Helicopter extends Aircraft implements Flyable {
                 coordinates.editLongitude(1);
                 break;
             case WeatherProvider.SNOW :
-                log("it's cold here.");
+                log("It's cold here.");
                 coordinates.editHeight(-12);
                 break ;
             case WeatherProvider.SUN :

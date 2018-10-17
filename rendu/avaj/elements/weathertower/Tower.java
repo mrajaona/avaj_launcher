@@ -24,6 +24,11 @@ public class Tower {
     }
 
     protected void conditionsChanged() {
+        if (observers.isEmpty()) {
+            log("Nobody flying.");
+            return ;
+        }
+
         ArrayList <Flyable> tmpList = new ArrayList <Flyable> (observers);
 
         for (Flyable observer : tmpList) {
