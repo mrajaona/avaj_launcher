@@ -46,6 +46,10 @@ public class Helicopter extends Aircraft implements Flyable {
             default :
                 // ERROR
         }
+
+        if (coordinates.getHeight() == 0) {
+            land();
+        }
     }
 
     @Override
@@ -60,8 +64,8 @@ public class Helicopter extends Aircraft implements Flyable {
     }
 
     private void land() {
+        log("Landing at " + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight());
         weatherTower.unregister(this);
-        // TO DO : log current coordinates
     }
 
 }

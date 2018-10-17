@@ -26,7 +26,7 @@ public class WeatherProvider {
 
     public String getCurrentWeather(Coordinates coordinates) {
         // TO DO
-        return (SUN);
+        return (SNOW);
     }
 
 }

@@ -18,6 +18,7 @@ public class Coordinates {
             value = COORD_MIN;
         else if (value > COORD_MAX)
             value = COORD_MAX;
+
         return (value);
     }
 
@@ -43,7 +44,7 @@ public class Coordinates {
     }
 
     public void editLatitude(int modifier) {
-        longitude = checkCoord(latitude + modifier);
+        latitude = checkCoord(latitude + modifier);
     }
 
     public int getHeight() {
@@ -51,7 +52,7 @@ public class Coordinates {
     }
 
     public void editHeight(int modifier) {
-        longitude = checkHeight(height + modifier);
+        height = checkHeight(height + modifier);
     }
 
 }
