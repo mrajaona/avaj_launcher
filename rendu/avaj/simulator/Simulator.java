@@ -10,7 +10,7 @@ import java.lang.Exception;
 public class Simulator {
 
     public static void main(String [] args) {
-        try {
+//        try {
 
             WeatherTower tower = new WeatherTower();
 
@@ -25,12 +25,12 @@ public class Simulator {
             aircraftC.registerTower(tower);
 
             tower.runSimulation(10);
-
-        //} catch (AvajException e) {
-
-        } catch (Exception e) {
-
+/*
+        } catch (AvajException e) {
+            System.err.println(e.toString());
+            e.printStackTrace();
         }
+*/
     }
 
 }
