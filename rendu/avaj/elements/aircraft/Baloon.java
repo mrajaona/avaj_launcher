@@ -23,7 +23,7 @@ public class Baloon extends Aircraft implements Flyable {
     }
 
     @Override
-    public void updateConditions() {
+    public void updateConditions(){
         final String weather = weatherTower.getWeather(coordinates);
 
         switch (weather) {
@@ -45,7 +45,7 @@ public class Baloon extends Aircraft implements Flyable {
                 coordinates.editHeight(4);
                 break ;
             default :
-                // Exception
+                // throw new InvalidWeatherException();
         }
 
         if (coordinates.getHeight() == 0) {

@@ -15,21 +15,19 @@ public class WeatherProvider {
         FOG,
         SUN,
         SNOW
-    } ;
+    };
 
-    // TO DO : un constructeur
     private WeatherProvider() {};
 
     public static WeatherProvider getProvider() {
         return (weatherProvider);
     }
 
+    // This could be static, but UML says otherwise
     public String getCurrentWeather(Coordinates coordinates) {
         int seed = coordinates.getLongitude() + coordinates.getLatitude() - coordinates.getHeight();
         seed = seed / 5;
         seed = seed < 0 ? -seed : seed;
-
-        // System.out.println(coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight() + " -> " + seed + " -> " + seed % 4); // DEBUG
 
         return (weather[seed % 4]);
     }

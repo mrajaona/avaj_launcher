@@ -45,7 +45,7 @@ public class Helicopter extends Aircraft implements Flyable {
                 coordinates.editHeight(2);
                 break ;
             default :
-                // Exception
+                // throw new InvalidWeatherException();
         }
 
         if (coordinates.getHeight() == 0) {
