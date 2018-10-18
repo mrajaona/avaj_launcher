@@ -7,10 +7,11 @@ import avaj.elements.weathertower.WeatherTower;
 import avaj.elements.aircraft.Coordinates;
 
 import avaj.elements.weatherprovider.WeatherProvider;
+import avaj.elements.aircraft.AircraftFactory;
 
 public class Helicopter extends Aircraft implements Flyable {
 
-    private static final String TYPE = "Helicopter";
+    private static final String TYPE = AircraftFactory.HELICOPTER;
     private WeatherTower weatherTower;
 
     Helicopter(String name, Coordinates coordinates) {
@@ -44,7 +45,7 @@ public class Helicopter extends Aircraft implements Flyable {
                 coordinates.editHeight(2);
                 break ;
             default :
-                // ERROR
+                // Exception
         }
 
         if (coordinates.getHeight() == 0) {

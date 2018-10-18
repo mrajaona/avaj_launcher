@@ -11,9 +11,9 @@ public class Simulator {
 
         AircraftFactory factory = new AircraftFactory();
 
-        Flyable aircraftA = factory.newAircraft("type A", "nameA", 0, 1, 2);
-        Flyable aircraftB = factory.newAircraft("type B", "nameB", 10, 11, 12);
-        Flyable aircraftC = factory.newAircraft("type C", "nameC", 20, 21, 22);
+        Flyable aircraftA = factory.newAircraft("JetPlane", "nameA", 0, 1, 2);
+        Flyable aircraftB = factory.newAircraft("Helicopter", "nameB", 10, 11, 12);
+        Flyable aircraftC = factory.newAircraft("Baloon", "nameC", 20, 21, 22);
 
         aircraftA.registerTower(tower);
         aircraftB.registerTower(tower);
