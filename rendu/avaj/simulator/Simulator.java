@@ -22,9 +22,9 @@ public class Simulator {
         try {
 
             if (args.length == 0)
-                throw (new NotEnoughArgsException() );
+                throw ( new NotEnoughArgsException() );
             else if (args.length < 1)
-                throw (new TooManyArgsException() );
+                throw ( new TooManyArgsException() );
 
             // Reader
 
@@ -32,12 +32,13 @@ public class Simulator {
 
             ArrayList <String> content  = Reader.run(fileName);
             if (content == null)
-                throw (new DefaultException());
+                throw ( new DefaultException() );
             else if (content.isEmpty())
-                throw (new InvalidFileException());
+                throw ( new InvalidFileException() );
 
             // DEBUG
             {
+                
                 System.out.println("----- Debug Reader");
 
                 ListIterator <String> iterator = content.listIterator();
@@ -48,13 +49,14 @@ public class Simulator {
 
                 System.out.println("----- End debug Reader");
                 System.out.println();
+
             }
             // END DEBUG
 
             // Lexer
             ArrayList < ArrayList <String> > lexeme = Lexer.run(content);
             if (lexeme == null || lexeme.isEmpty())
-                throw (new DefaultException());
+                throw ( new DefaultException() );
 
             fileName    = null;
             content     = null;
@@ -86,24 +88,8 @@ public class Simulator {
             // Parser
 
             // Run simulation
+            run();
 
-            WeatherTower tower      = new WeatherTower();
-
-            AircraftFactory factory = new AircraftFactory();
-
-            // TEST
-            {
-                Flyable aircraftA = factory.newAircraft("JetPlane", "nameA", 0, 1, 2);
-                Flyable aircraftB = factory.newAircraft("Helicopter", "nameB", 10, 11, 12);
-                Flyable aircraftC = factory.newAircraft("Baloon", "nameC", 20, 21, 22);
-
-                aircraftA.registerTower(tower);
-                aircraftB.registerTower(tower);
-                aircraftC.registerTower(tower);
-
-                tower.runSimulation(10);
-            }
-            // END TEST
 
         } catch (AvajException e) {
             e.printStackTrace();
@@ -111,6 +97,26 @@ public class Simulator {
             e.printStackTrace();
         }
 
+    }
+
+    private static void run() {
+
+        WeatherTower tower      = new WeatherTower();
+        AircraftFactory factory = new AircraftFactory();
+
+        // TEST
+        {
+            Flyable aircraftA = factory.newAircraft("JetPlane", "nameA", 0, 1, 2);
+            Flyable aircraftB = factory.newAircraft("Helicopter", "nameB", 10, 11, 12);
+            Flyable aircraftC = factory.newAircraft("Baloon", "nameC", 20, 21, 22);
+
+            aircraftA.registerTower(tower);
+            aircraftB.registerTower(tower);
+            aircraftC.registerTower(tower);
+
+            tower.runSimulation(10);
+        }
+        // END TEST
     }
 
 }
