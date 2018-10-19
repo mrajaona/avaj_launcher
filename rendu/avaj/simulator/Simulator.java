@@ -12,6 +12,7 @@ import avaj.exceptions.TooManyArgsException;
 import avaj.exceptions.InvalidFileException;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 
 import java.util.ListIterator; // DEBUG
@@ -36,23 +37,6 @@ public class Simulator {
             else if (content.isEmpty())
                 throw ( new InvalidFileException() );
 
-            // DEBUG
-            {
-
-                System.out.println("----- Debug Reader");
-
-                ListIterator <String> iterator = content.listIterator();
-
-                while (iterator.hasNext()) {
-                    System.out.println(iterator.next());
-                }
-
-                System.out.println("----- End debug Reader");
-                System.out.println();
-
-            }
-            // END DEBUG
-
             // Lexer
             ArrayList < ArrayList <String> > lexeme = Lexer.run(content);
             if (lexeme == null || lexeme.isEmpty())
@@ -61,35 +45,11 @@ public class Simulator {
             fileName    = null;
             content     = null;
 
-            // DEBUG
-            {
-                System.out.println("----- Debug Lexer");
-
-                ListIterator < ArrayList <String> > iterator = lexeme.listIterator();
-                ListIterator <String> subIterator;
-
-                while (iterator.hasNext()) {
-
-                    subIterator = iterator.next().listIterator();
-                    while (subIterator.hasNext()) {
-                        System.out.print(subIterator.next() + " - ");
-                    }
-
-                    System.out.println();                    
-
-                }
-
-                System.out.println("----- End debug Lexer");
-                System.out.println();
-
-            }
-            // END DEBUG
-
             // Parser
-            Parser.run(lexeme);
+            ParsedData parsedData = Parser.run(lexeme);
 
             // Run simulation
-            run();
+            run(parsedData);
 
         } catch (AvajException e) {
             e.printStackTrace();
@@ -99,24 +59,33 @@ public class Simulator {
 
     }
 
-    private static void run() {
+    private static void run(ParsedData data) {
 
-        WeatherTower tower      = new WeatherTower();
-        AircraftFactory factory = new AircraftFactory();
+        WeatherTower tower              = new WeatherTower();
+        AircraftFactory factory         = new AircraftFactory();
+        ArrayList <Flyable> flyableList = new ArrayList <Flyable> ();
 
-        // TEST
-        {
-            Flyable aircraftA = factory.newAircraft("JetPlane", "nameA", 0, 1, 2);
-            Flyable aircraftB = factory.newAircraft("Helicopter", "nameB", 10, 11, 12);
-            Flyable aircraftC = factory.newAircraft("Baloon", "nameC", 20, 21, 22);
+        List <ParsedItem> parsed            = data.getList();
+        ListIterator <ParsedItem> iterator  = parsed.listIterator();
 
-            aircraftA.registerTower(tower);
-            aircraftB.registerTower(tower);
-            aircraftC.registerTower(tower);
+        while (iterator.hasNext()) {
 
-            tower.runSimulation(10);
+            ParsedItem item     = iterator.next();
+            Flyable aircraft    = factory.newAircraft(
+                    item.getType(),
+                    item.getName(),
+                    item.getLongitude(),
+                    item.getLatitude(),
+                    item.getHeight()
+                );
+
+            flyableList.add(aircraft);
+            aircraft.registerTower(tower);
+
         }
-        // END TEST
+
+        tower.runSimulation(data.getNbSim());
+
     }
 
 }

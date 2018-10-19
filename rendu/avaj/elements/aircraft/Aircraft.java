@@ -4,7 +4,7 @@ public class Aircraft {
 
 	protected long id;
 	protected String name;
-	protected Coordinates coordinates; // TO DO : check destroyed with Aircraft
+	protected Coordinates coordinates;
 
 	private static long idCounter = 0;
 
@@ -16,8 +16,6 @@ public class Aircraft {
 		id			= idCounter;
 
 		idCounter++; // TO DO : limit
-		System.out.println("id: " + id); // DEBUG
-		System.out.println("idCounter: " + idCounter); // DEBUG
 	}
 
 	private long nextId() {

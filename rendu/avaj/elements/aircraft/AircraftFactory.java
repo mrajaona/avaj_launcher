@@ -20,6 +20,7 @@ public class AircraftFactory {
 
     private static Map <String, FlyableCreator> creatorMap = initCreatorMap();
     private static Map <String, FlyableCreator> initCreatorMap() {
+
         Map <String, FlyableCreator> newMap = new HashMap <String, FlyableCreator> (types.length);
 
         newMap.put(
@@ -54,7 +55,7 @@ public class AircraftFactory {
     }
 
 	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
-        System.out.println("newAircraft: " + type + " " + name + ": " + longitude + ", " + latitude + ", " + height); // DEBUG
+       // System.out.println("newAircraft: " + type + " " + name + ": " + longitude + ", " + latitude + ", " + height); // DEBUG
 
 		Coordinates coord	    = new Coordinates(longitude, latitude, height);
         FlyableCreator creator  = creatorMap.get(type);
@@ -65,7 +66,6 @@ public class AircraftFactory {
 
         Flyable aircraft    = creator.make(name, coord);
 
-        System.out.println(type + " created"); // DEBUG
 		return (aircraft);
 	}
 

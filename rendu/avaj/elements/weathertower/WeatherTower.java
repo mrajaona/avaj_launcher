@@ -12,7 +12,7 @@ public class WeatherTower extends Tower {
     }
 
     void changeWeather() {
-        System.out.println("loop -------------"); // DEBUG
+        System.out.println(); // cleaner input
         conditionsChanged();
     }
 

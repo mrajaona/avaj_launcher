@@ -8,9 +8,7 @@ import java.util.ListIterator;
 
 class Parser {
 
-    static void run(ArrayList < ArrayList <String> > lexeme) throws AvajException {
-        ListIterator < ArrayList <String> > iterator = lexeme.listIterator();
-        ListIterator <String> subIterator;
+    static ParsedData run(ArrayList < ArrayList <String> > lexeme) throws AvajException {
 
         int simNum = 0;
 
@@ -26,25 +24,34 @@ class Parser {
         
         }
 
-        System.out.println("simNum = " + simNum);
+        // remove first line
+        lexeme.remove(0);
 
+        ArrayList <ParsedItem> parsed = new ArrayList <ParsedItem> ();
+
+        ListIterator < ArrayList <String> > iterator = lexeme.listIterator();
+        ListIterator <String> subIterator;
+
+        // get aircrafts
         while (iterator.hasNext()) {
 
-            subIterator = iterator.next().listIterator();
-            while (subIterator.hasNext()) {
-                System.out.print(subIterator.next() + " - ");
-            }
+            ArrayList <String> tmp = iterator.next();
+            if (tmp.size() != 5)
+                throw ( new InvalidFileException() );
 
-            System.out.println();                    
+            parsed.add(
+                new ParsedItem(
+                    tmp.get(0), // type 
+                    tmp.get(1), // name
+                    tmp.get(2), // longitude
+                    tmp.get(3), // latitude
+                    tmp.get(4)  // height  
+                )
+            );
 
         }
 
-
-
-        // get aircrafts
-
-        return ;
-        // return (parsed);
+        return ( new ParsedData(simNum, parsed) );
     }
 
 }
