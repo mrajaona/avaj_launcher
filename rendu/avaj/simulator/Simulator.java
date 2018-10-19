@@ -38,7 +38,7 @@ public class Simulator {
 
             // DEBUG
             {
-                
+
                 System.out.println("----- Debug Reader");
 
                 ListIterator <String> iterator = content.listIterator();
@@ -86,10 +86,10 @@ public class Simulator {
             // END DEBUG
 
             // Parser
+            Parser.run(lexeme);
 
             // Run simulation
             run();
-
 
         } catch (AvajException e) {
             e.printStackTrace();
