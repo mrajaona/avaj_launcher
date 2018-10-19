@@ -7,12 +7,26 @@ import avaj.elements.weathertower.WeatherTower;
 import avaj.exceptions.AvajException;
 import java.lang.Exception;
 
+import avaj.exceptions.NotEnoughArgsException;
+import avaj.exceptions.TooManyArgsException;
+
 public class Simulator {
 
     public static void main(String [] args) {
-//        try {
+        try {
 
-            WeatherTower tower = new WeatherTower();
+            if (args.length == 0)
+                throw (new NotEnoughArgsException() );
+            else if (args.length < 1)
+                throw (new TooManyArgsException() );
+
+            String filename         = args[0];
+
+            Reader reader           = new Reader();
+
+            // Run simulation
+
+            WeatherTower tower      = new WeatherTower();
 
             AircraftFactory factory = new AircraftFactory();
 
@@ -25,12 +39,12 @@ public class Simulator {
             aircraftC.registerTower(tower);
 
             tower.runSimulation(10);
-/*
+
         } catch (AvajException e) {
-            System.err.println(e.toString());
+            //System.err.println(e.toString());
             e.printStackTrace();
         }
-*/
+
     }
 
 }
