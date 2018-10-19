@@ -12,8 +12,9 @@ import avaj.exceptions.TooManyArgsException;
 import avaj.exceptions.InvalidFileException;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 import java.io.IOException;
+
+import java.util.ListIterator; // DEBUG
 
 public class Simulator {
 
@@ -67,10 +68,12 @@ public class Simulator {
 
                 while (iterator.hasNext()) {
 
-                    subIterator = content.listIterator();
+                    subIterator = iterator.next().listIterator();
                     while (subIterator.hasNext()) {
-                        System.out.print(subIterator.next() + " ");
+                        System.out.print(subIterator.next() + " - ");
                     }
+
+                    System.out.println();                    
 
                 }
 
