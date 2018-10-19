@@ -37,16 +37,48 @@ public class Simulator {
 
             // DEBUG
             {
-                ListIterator <String> contentIterator = content.listIterator();
+                System.out.println("----- Debug Reader");
 
-                while (contentIterator.hasNext()) {
-                    System.out.println(contentIterator.next());
+                ListIterator <String> iterator = content.listIterator();
+
+                while (iterator.hasNext()) {
+                    System.out.println(iterator.next());
                 }
+
+                System.out.println("----- End debug Reader");
+                System.out.println();
             }
             // END DEBUG
 
             // Lexer
-            fileName = null;
+            ArrayList < ArrayList <String> > lexeme = Lexer.run(content);
+            if (lexeme == null || lexeme.isEmpty())
+                throw (new DefaultException());
+
+            fileName    = null;
+            content     = null;
+
+            // DEBUG
+            {
+                System.out.println("----- Debug Lexer");
+
+                ListIterator < ArrayList <String> > iterator = lexeme.listIterator();
+                ListIterator <String> subIterator;
+
+                while (iterator.hasNext()) {
+
+                    subIterator = content.listIterator();
+                    while (subIterator.hasNext()) {
+                        System.out.print(subIterator.next() + " ");
+                    }
+
+                }
+
+                System.out.println("----- End debug Lexer");
+                System.out.println();
+
+            }
+            // END DEBUG
 
             // Parser
 
