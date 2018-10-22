@@ -32,7 +32,7 @@ public class AircraftFactory {
         newMap.put(
             JETPLANE,
             new FlyableCreator() {
-                public Flyable make(String name, Coordinates coord) {
+                public Flyable make(String name, Coordinates coord) throws AvajException {
                     return (new JetPlane(name, coord));
                 }
             }
@@ -41,7 +41,7 @@ public class AircraftFactory {
         newMap.put(
             HELICOPTER,
             new FlyableCreator() {
-                public Flyable make(String name, Coordinates coord) {
+                public Flyable make(String name, Coordinates coord) throws AvajException {
                     return (new Helicopter(name, coord));
                 }
             }
@@ -50,7 +50,7 @@ public class AircraftFactory {
         newMap.put(
             BALOON,
             new FlyableCreator() {
-                public Flyable make(String name, Coordinates coord) {
+                public Flyable make(String name, Coordinates coord) throws AvajException {
                     return (new Baloon(name, coord));
                 }
             }
@@ -89,7 +89,7 @@ public class AircraftFactory {
 	}
 
     private interface FlyableCreator {
-        public Flyable make(String name, Coordinates coord);
+        public Flyable make(String name, Coordinates coord) throws AvajException;
     }
 
 }

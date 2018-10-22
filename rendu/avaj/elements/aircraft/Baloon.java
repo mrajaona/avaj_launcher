@@ -11,6 +11,8 @@ import avaj.elements.aircraft.AircraftFactory;
 
 import avaj.simulator.OutputManager;
 
+import avaj.exceptions.InvalidWeatherException;
+
 import avaj.exceptions.AvajException;
 import java.io.IOException;
 
@@ -19,7 +21,7 @@ public class Baloon extends Aircraft implements Flyable {
     private static final String TYPE = AircraftFactory.BALOON;
     private WeatherTower weatherTower;
 
-    Baloon(String name, Coordinates coordinates) {
+    Baloon(String name, Coordinates coordinates) throws AvajException {
         super(name, coordinates);
     }
 
@@ -50,7 +52,7 @@ public class Baloon extends Aircraft implements Flyable {
                 coordinates.editHeight(4);
                 break ;
             default :
-                // throw new InvalidWeatherException();
+                throw ( new InvalidWeatherException() );
         }
 
         if (coordinates.getHeight() == 0) {

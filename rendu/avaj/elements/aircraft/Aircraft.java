@@ -1,5 +1,10 @@
 package avaj.elements.aircraft;
 
+import avaj.exceptions.AvajException;
+import avaj.exceptions.TooManyAircraftsException;
+
+import java.lang.Long;
+
 public class Aircraft {
 
 	protected long id;
@@ -10,7 +15,11 @@ public class Aircraft {
 
 	private Aircraft() {}
 
-	protected Aircraft(String n, Coordinates c) {
+	protected Aircraft(String n, Coordinates c) throws AvajException {
+		if (idCounter == Long.MAX_VALUE) {
+			throw ( new TooManyAircraftsException() );
+		}
+
 		name 		= n;
 		coordinates	= c;
 		id			= idCounter;

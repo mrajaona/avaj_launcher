@@ -28,7 +28,6 @@ public class Simulator {
                 throw ( new TooManyArgsException() );
 
             // Reader
-
             String fileName = new String(args[0]);
 
             ArrayList <String> content  = Reader.run(fileName);
