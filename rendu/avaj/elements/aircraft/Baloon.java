@@ -70,7 +70,7 @@ public class Baloon extends Aircraft implements Flyable {
     }
 
     private void land() throws AvajException, IOException {
-        log("Landing at " + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight());
+        log("Landing at " + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight() + ".");
         weatherTower.unregister(this);
     }
 
