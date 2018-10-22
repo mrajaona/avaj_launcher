@@ -2,9 +2,15 @@ package avaj.elements.aircraft;
 
 import avaj.elements.flyable.Flyable;
 
+import avaj.exceptions.InvalidAircraftTypeException;
+import avaj.exceptions.InvalidCoordinatesException;
+import avaj.exceptions.InvalidHeightException;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
+
+import avaj.exceptions.AvajException;
 
 public class AircraftFactory {
 
@@ -54,14 +60,27 @@ public class AircraftFactory {
 
     }
 
-	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) {
-       // OutputManager.writeToFile("newAircraft: " + type + " " + name + ": " + longitude + ", " + latitude + ", " + height); // DEBUG
+	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) throws AvajException {
+
+        if (
+            longitude < Coordinates.COORD_MIN
+            || latitude < Coordinates.COORD_MIN
+            || height < Coordinates.COORD_MIN
+            ) {
+            throw ( new InvalidCoordinatesException() );
+        }
+
+        /*
+        if (height > Coordinates.COORD_MAX) {
+            throw ( new InvalidHeightException() );            
+        }
+        */
 
 		Coordinates coord	    = new Coordinates(longitude, latitude, height);
         FlyableCreator creator  = creatorMap.get(type);
 
         if (creator == null) {
-            return (null);
+            throw ( new InvalidAircraftTypeException() );
         }
 
         Flyable aircraft    = creator.make(name, coord);

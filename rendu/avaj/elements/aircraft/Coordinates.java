@@ -2,8 +2,8 @@ package avaj.elements.aircraft;
 
 public class Coordinates {
     
-    private static final int COORD_MIN  = 0;
-    private static final int COORD_MAX  = 100;
+    static final int COORD_MIN  = 0;
+    static final int COORD_MAX  = 100;
 
     private int longitude;
     private int latitude;

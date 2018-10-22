@@ -4,7 +4,7 @@ public class InvalidRunNumberException extends AvajException {
 
     public InvalidRunNumberException() {
         super(
-            "Invalid numer of times to run the simulation."
+            "Invalid number of times to run the simulation."
         );
     }
 
