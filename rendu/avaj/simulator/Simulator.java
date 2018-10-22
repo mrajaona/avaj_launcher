@@ -19,7 +19,7 @@ import java.util.ListIterator; // DEBUG
 
 public class Simulator {
 
-    public static void main(String [] args) {
+    public static void main(String [] args) throws AvajException, IOException {
         try {
 
             if (args.length == 0)
@@ -59,7 +59,8 @@ public class Simulator {
 
     }
 
-    private static void run(ParsedData data) {
+    private static void run(ParsedData data) throws AvajException, IOException {
+        OutputManager.createOutputFile();
 
         WeatherTower tower              = new WeatherTower();
         AircraftFactory factory         = new AircraftFactory();

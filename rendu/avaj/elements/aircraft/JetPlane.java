@@ -9,6 +9,11 @@ import avaj.elements.aircraft.Coordinates;
 import avaj.elements.weatherprovider.WeatherProvider;
 import avaj.elements.aircraft.AircraftFactory;
 
+import avaj.simulator.OutputManager;
+
+import avaj.exceptions.AvajException;
+import java.io.IOException;
+
 public class JetPlane extends Aircraft implements Flyable {
 
     private static final String TYPE = AircraftFactory.JETPLANE;
@@ -18,12 +23,12 @@ public class JetPlane extends Aircraft implements Flyable {
         super(name, coordinates);
     }
 
-    private void log(String message) {
-        System.out.println(identify() + ": " + message);
+    private void log(String message) throws AvajException, IOException {
+        OutputManager.writeToFile(identify() + ": " + message);
     }
 
     @Override
-    public void updateConditions() {
+    public void updateConditions() throws AvajException, IOException {
         final String weather = weatherTower.getWeather(coordinates);
 
         switch (weather) {
@@ -54,7 +59,7 @@ public class JetPlane extends Aircraft implements Flyable {
     }
 
     @Override
-    public void registerTower(WeatherTower tower) {
+    public void registerTower(WeatherTower tower) throws AvajException, IOException {
         tower.register(this);
         weatherTower = tower;
     }
@@ -64,7 +69,7 @@ public class JetPlane extends Aircraft implements Flyable {
         return (TYPE + "#" + name + "(" + id + ")");
     }
 
-    private void land() {
+    private void land() throws AvajException, IOException {
         log("Landing at " + coordinates.getLongitude() + ", " + coordinates.getLatitude() + ", " + coordinates.getHeight());
         weatherTower.unregister(this);
     }

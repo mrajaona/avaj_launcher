@@ -1,0 +1,194 @@
+Tower says: Baloon#B1(0) registered to weather tower.
+Tower says: Baloon#B2(1) registered to weather tower.
+Tower says: JetPlane#J1(2) registered to weather tower.
+Tower says: Helicopter#H1(3) registered to weather tower.
+Tower says: Helicopter#H2(4) registered to weather tower.
+Tower says: Helicopter#H3(5) registered to weather tower.
+Tower says: Baloon#B3(6) registered to weather tower.
+Tower says: JetPlane#J2(7) registered to weather tower.
+Tower says: Helicopter#H4(8) registered to weather tower.
+
+Baloon#B1(0): Why is snow so heavy ?
+Baloon#B2(1): Why is snow so heavy ?
+JetPlane#J1(2): What's this? There's white things in the air.
+Helicopter#H1(3): I can't see.
+Helicopter#H2(4): So bright.
+Helicopter#H3(5): I can't see.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): So hot.
+Helicopter#H4(8): So bright.
+
+Baloon#B1(0): What a glorious feeling. I'm happy again.
+Baloon#B1(0): Landing at 2, 3, 0
+Tower says: Baloon#B1(0) unregistered from weather tower.
+Baloon#B2(1): What a glorious feeling. I'm happy again.
+JetPlane#J1(2): Just singing in the rain.
+Helicopter#H1(3): I can't see.
+Helicopter#H2(4): It's cold here.
+Helicopter#H3(5): I can't see.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Just singing in the rain.
+Helicopter#H4(8): I'm singing in the rain.
+
+Baloon#B2(1): Why is snow so heavy ?
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H1(3): I can't see.
+Helicopter#H2(4): So bright.
+Helicopter#H3(5): I can't see.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): I can't see.
+
+Baloon#B2(1): What a glorious feeling. I'm happy again.
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H1(3): So bright.
+Helicopter#H2(4): It's cold here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): I can't see.
+
+Baloon#B2(1): Why is snow so heavy ?
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H1(3): It's cold here.
+Helicopter#H2(4): So bright.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): I can't see.
+
+Baloon#B2(1): What a glorious feeling. I'm happy again.
+JetPlane#J1(2): So hot.
+Helicopter#H1(3): So bright.
+Helicopter#H2(4): It's cold here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): I can't see.
+
+Baloon#B2(1): What a glorious feeling. I'm happy again.
+JetPlane#J1(2): What's this? There's white things in the air.
+Helicopter#H1(3): It's cold here.
+Helicopter#H1(3): Landing at 677, 33, 0
+Tower says: Helicopter#H1(3) unregistered from weather tower.
+Helicopter#H2(4): So bright.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): I can't see.
+
+Baloon#B2(1): I think I'm in a cloud.
+Baloon#B2(1): Landing at 1, 8, 0
+Tower says: Baloon#B2(1) unregistered from weather tower.
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H2(4): It's cold here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): So hot.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H2(4): So bright.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Just singing in the rain.
+Helicopter#H4(8): It's cold here.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H2(4): It's cold here.
+Helicopter#H2(4): Landing at 72, 33, 0
+Tower says: Helicopter#H2(4) unregistered from weather tower.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): It's cold here.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): So hot.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): It's cold here.
+
+JetPlane#J1(2): What's this? There's white things in the air.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): So hot.
+Helicopter#H4(8): It's cold here.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Just singing in the rain.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): It's cold here.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): So bright.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+Helicopter#H4(8): It's cold here.
+Helicopter#H4(8): Landing at 303, 23, 0
+Tower says: Helicopter#H4(8) unregistered from weather tower.
+
+JetPlane#J1(2): So hot.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+
+JetPlane#J1(2): What's this? There's white things in the air.
+Helicopter#H3(5): It's cold here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): So bright.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): So hot.
+
+JetPlane#J1(2): Quite foggy here.
+Helicopter#H3(5): It's cold here.
+Helicopter#H3(5): Landing at 201, 68, 0
+Tower says: Helicopter#H3(5) unregistered from weather tower.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Just singing in the rain.
+
+JetPlane#J1(2): Quite foggy here.
+Baloon#B3(6): I think I'm in a cloud.
+JetPlane#J2(7): Quite foggy here.
+
+JetPlane#J1(2): Quite foggy here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
+
+JetPlane#J1(2): Quite foggy here.
+Baloon#B3(6): I'm on fire!
+JetPlane#J2(7): Quite foggy here.
