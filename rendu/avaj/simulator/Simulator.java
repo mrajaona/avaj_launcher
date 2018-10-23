@@ -61,7 +61,7 @@ public class Simulator {
     private static void run(ParsedData data) throws AvajException, IOException {
         OutputManager.createOutputFile();
 
-        WeatherTower tower              = new WeatherTower();
+        final WeatherTower tower        = new WeatherTower();
         AircraftFactory factory         = new AircraftFactory();
         ArrayList <Flyable> flyableList = new ArrayList <Flyable> ();
 

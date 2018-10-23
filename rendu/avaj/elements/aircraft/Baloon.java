@@ -19,7 +19,7 @@ public class Baloon extends Aircraft implements Flyable {
     private static final String TYPE = AircraftFactory.BALOON;
     private WeatherTower weatherTower;
 
-    Baloon(String name, Coordinates coordinates) throws AvajException {
+    Baloon(final String name, final Coordinates coordinates) throws AvajException {
         super(name, coordinates);
         type = TYPE;
     }
@@ -56,7 +56,7 @@ public class Baloon extends Aircraft implements Flyable {
     }
 
     @Override
-    public void registerTower(WeatherTower tower) throws AvajException, IOException {
+    public void registerTower(final WeatherTower tower) throws AvajException, IOException {
         tower.register(this);
         weatherTower = tower;
     }

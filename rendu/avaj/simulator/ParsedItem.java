@@ -15,13 +15,11 @@ class ParsedItem {
         String sLatitude,
         String sHeight
     ) {
-
         type        = new String(sType);
         name        = new String(sName);
         longitude   = Integer.parseInt(sLongitude);
         latitude    = Integer.parseInt(sLatitude);
         height      = Integer.parseInt(sHeight);
-
     }
 
     String getType() {

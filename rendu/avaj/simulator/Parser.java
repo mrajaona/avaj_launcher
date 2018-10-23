@@ -10,7 +10,6 @@ import java.util.ListIterator;
 class Parser {
 
     static ParsedData run(ArrayList < ArrayList <String> > lexeme) throws AvajException {
-
         // get number of simulations to run
         ArrayList <String> firstLine = lexeme.get(0);
         if (firstLine == null)
@@ -46,5 +45,4 @@ class Parser {
 
         return ( new ParsedData(simNum, parsed) );
     }
-
 }

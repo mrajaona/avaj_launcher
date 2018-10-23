@@ -39,7 +39,7 @@ public class OutputManager {
 
     public static void writeToFile(String message) throws AvajException, IOException {
         if ( checkFile() ) {
-            BufferedWriter writer = Files.newBufferedWriter(FILE_PATH, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
+            final BufferedWriter writer = Files.newBufferedWriter(FILE_PATH, StandardCharsets.UTF_8, StandardOpenOption.APPEND);
             writer.write(message, 0, message.length());
             writer.newLine();
             writer.close();

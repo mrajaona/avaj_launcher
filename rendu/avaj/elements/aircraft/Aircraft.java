@@ -21,7 +21,7 @@ public class Aircraft {
 
 	private Aircraft() {}
 
-	protected Aircraft(String n, Coordinates c) throws AvajException {
+	protected Aircraft(final String n, final Coordinates c) throws AvajException {
 		name 		= n;
 		coordinates	= c;
 		id			= nextId();
@@ -35,7 +35,7 @@ public class Aircraft {
 		return (ret);
 	}
 
-    protected void log(String message) throws AvajException, IOException {
+    protected void log(final String message) throws AvajException, IOException {
         OutputManager.writeToFile(identify() + ": " + message);
     }
 

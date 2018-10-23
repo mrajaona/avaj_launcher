@@ -35,7 +35,7 @@ public class Coordinates {
         return (longitude);
     }
 
-    public void editLongitude(int modifier) {
+    public void editLongitude(final int modifier) {
         longitude = checkCoord(longitude + modifier);
     }
 
@@ -43,7 +43,7 @@ public class Coordinates {
         return (latitude);
     }
 
-    public void editLatitude(int modifier) {
+    public void editLatitude(final int modifier) {
         latitude = checkCoord(latitude + modifier);
     }
 
@@ -51,7 +51,7 @@ public class Coordinates {
         return (height);
     }
 
-    public void editHeight(int modifier) {
+    public void editHeight(final int modifier) {
         height = checkHeight(height + modifier);
     }
 
