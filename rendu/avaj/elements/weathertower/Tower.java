@@ -34,7 +34,7 @@ public class Tower {
             return ;
         }
 
-        ArrayList <Flyable> tmpList = new ArrayList <Flyable> (observers);
+        final ArrayList <Flyable> tmpList = new ArrayList <Flyable> (observers);
 
         for (Flyable observer : tmpList) {
             observer.updateConditions();
