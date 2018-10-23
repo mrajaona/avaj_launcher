@@ -9,8 +9,6 @@ import avaj.elements.aircraft.Coordinates;
 import avaj.elements.weatherprovider.WeatherProvider;
 import avaj.elements.aircraft.AircraftFactory;
 
-import avaj.simulator.OutputManager;
-
 import avaj.exceptions.InvalidWeatherException;
 
 import avaj.exceptions.AvajException;
@@ -23,10 +21,7 @@ public class Baloon extends Aircraft implements Flyable {
 
     Baloon(String name, Coordinates coordinates) throws AvajException {
         super(name, coordinates);
-    }
-
-    private void log(String message) throws AvajException, IOException {
-        OutputManager.writeToFile(identify() + ": " + message);
+        type = TYPE;
     }
 
     @Override
@@ -64,11 +59,6 @@ public class Baloon extends Aircraft implements Flyable {
     public void registerTower(WeatherTower tower) throws AvajException, IOException {
         tower.register(this);
         weatherTower = tower;
-    }
-
-    @Override
-    public String identify() {
-        return (TYPE + "#" + name + "(" + id + ")");
     }
 
     private void land() throws AvajException, IOException {

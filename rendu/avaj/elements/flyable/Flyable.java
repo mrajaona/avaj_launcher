@@ -9,6 +9,6 @@ public interface Flyable {
 
     public void updateConditions() throws AvajException, IOException;
     public void registerTower(WeatherTower weatherTower) throws AvajException, IOException;
-    public String identify();
+    public String identify() throws AvajException;
 
 }

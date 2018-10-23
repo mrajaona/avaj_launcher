@@ -84,6 +84,8 @@ public class Simulator {
 
         }
 
+        factory = null;
+
         tower.runSimulation(data.getNbSim());
 
     }
