@@ -24,9 +24,8 @@ public class AircraftFactory {
         BALOON
     } ;
 
-    private static Map <String, FlyableCreator> creatorMap = initCreatorMap();
-    private static Map <String, FlyableCreator> initCreatorMap() {
-
+    private static final Map <String, FlyableCreator> CREATOR_MAP = initCreatorMap();
+    private static final Map <String, FlyableCreator> initCreatorMap() {
         Map <String, FlyableCreator> newMap = new HashMap <String, FlyableCreator> (types.length);
 
         newMap.put(
@@ -57,11 +56,9 @@ public class AircraftFactory {
         );
 
         return (Collections.unmodifiableMap(newMap));
-
     }
 
 	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) throws AvajException {
-
         if (
             longitude < Coordinates.COORD_MIN
             || latitude < Coordinates.COORD_MIN
@@ -70,14 +67,8 @@ public class AircraftFactory {
             throw ( new InvalidCoordinatesException() );
         }
 
-        /*
-        if (height > Coordinates.COORD_MAX) {
-            throw ( new InvalidHeightException() );            
-        }
-        */
-
 		Coordinates coord	    = new Coordinates(longitude, latitude, height);
-        FlyableCreator creator  = creatorMap.get(type);
+        FlyableCreator creator  = CREATOR_MAP.get(type);
 
         if (creator == null) {
             throw ( new InvalidAircraftTypeException() );

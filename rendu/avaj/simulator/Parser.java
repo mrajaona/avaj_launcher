@@ -2,6 +2,7 @@ package avaj.simulator;
 
 import avaj.exceptions.AvajException;
 import avaj.exceptions.InvalidFileException;
+import avaj.exceptions.DefaultException;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -10,32 +11,25 @@ class Parser {
 
     static ParsedData run(ArrayList < ArrayList <String> > lexeme) throws AvajException {
 
-        int simNum = 0;
-
         // get number of simulations to run
         ArrayList <String> firstLine = lexeme.get(0);
-        if (firstLine != null) {
+        if (firstLine == null)
+            throw ( new DefaultException() );
+        if (firstLine.size() != 1)
+            throw ( new InvalidFileException() );
 
-            if (firstLine.size() != 1)
-                throw ( new InvalidFileException() );
-
-            String num = firstLine.get(0);
-            simNum = Integer.parseInt(num);
-        
-        }
+        int simNum = Integer.parseInt(firstLine.get(0));
 
         // remove first line
         lexeme.remove(0);
 
-        ArrayList <ParsedItem> parsed = new ArrayList <ParsedItem> ();
-
-        ListIterator < ArrayList <String> > iterator = lexeme.listIterator();
-        ListIterator <String> subIterator;
+        ArrayList <ParsedItem> parsed                   = new ArrayList <ParsedItem> ();
+        ListIterator < ArrayList <String> > iterator    = lexeme.listIterator();
 
         // get aircrafts
         while (iterator.hasNext()) {
-
             ArrayList <String> tmp = iterator.next();
+
             if (tmp.size() != 5)
                 throw ( new InvalidFileException() );
 
@@ -48,7 +42,6 @@ class Parser {
                     tmp.get(4)  // height  
                 )
             );
-
         }
 
         return ( new ParsedData(simNum, parsed) );

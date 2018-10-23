@@ -9,18 +9,14 @@ import java.util.Collections;
 
 class ParsedData {
     
-    private int nbSim;
-    private ArrayList <ParsedItem> itemList;
+    private final int nbSim;
+    private final ArrayList <ParsedItem> itemList;
 
-    ParsedData(
-        int n,
-        ArrayList <ParsedItem> list
-    ) throws AvajException {
-        nbSim       = n;
-        if (nbSim < 0) {
+    ParsedData(int n, ArrayList <ParsedItem> list) throws AvajException {
+        nbSim = n;
+        if (nbSim < 0)
             throw ( new InvalidRunNumberException() );
-        }
-        itemList    = new ArrayList <ParsedItem> (list);
+        itemList = new ArrayList <ParsedItem> (list);
     }
 
     int getNbSim() {

@@ -15,17 +15,17 @@ class Reader {
         ArrayList <String> content  = new ArrayList <String> ();
         String line                 = null;
 
-        FileReader fileReader           = new FileReader(fileName);
+        FileReader fileReader = new FileReader(fileName);
         if (fileReader == null)
-            throw (new DefaultException());
+            throw ( new DefaultException() );
 
-        BufferedReader bufferedReader   = new BufferedReader(fileReader);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
         if (bufferedReader == null)
-            throw (new DefaultException());
+            throw ( new DefaultException() );
 
         while((line = bufferedReader.readLine()) != null) {
             if (content.add(new String(line)) == false)
-                throw (new DefaultException());
+                throw ( new DefaultException() );
         } 
 
         bufferedReader.close();

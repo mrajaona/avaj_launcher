@@ -22,20 +22,16 @@ public class Aircraft {
 	private Aircraft() {}
 
 	protected Aircraft(String n, Coordinates c) throws AvajException {
-
 		name 		= n;
 		coordinates	= c;
 		id			= nextId();
-
 	}
 
 	private long nextId() throws AvajException {
-		if (idCounter == Long.MAX_VALUE) {
+		if (idCounter == Long.MAX_VALUE)
 			throw ( new TooManyAircraftsException() );
-		}
 
 		long ret = idCounter++;
-
 		return (ret);
 	}
 
