@@ -10,7 +10,8 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import avaj.exceptions.AvajException;
 
-import avaj.exceptions.DefaultException;
+import avaj.exceptions.OpenResFileException;
+import avaj.exceptions.CreateResFileException;
 
 public class OutputManager {
 
@@ -24,13 +25,13 @@ public class OutputManager {
         if ( Files.notExists(FILE_PATH) )
             Files.createFile(FILE_PATH);
         else
-            throw ( new DefaultException() );
+            throw ( new CreateResFileException() );
     }
 
     private static boolean checkFile() throws AvajException {
         if ( Files.exists(FILE_PATH) ) {
             if ( !( Files.isRegularFile(FILE_PATH) && Files.isWritable(FILE_PATH) ) )
-                throw ( new DefaultException() );
+                throw ( new OpenResFileException() );
             return (true);
         }
         return (false);
@@ -43,7 +44,7 @@ public class OutputManager {
             writer.newLine();
             writer.close();
         } else {
-            throw (new DefaultException() );
+            throw (new OpenResFileException() );
         }
     }
 
