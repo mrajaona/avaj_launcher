@@ -34,9 +34,15 @@ class Md5 {
     static String decrypt(String messageDigest) {
         String secret;
 
+        secret = md5AircraftHashes.get(messageDigest);
+        if (secret != null) {
+            System.out.println(secret);
+            return (secret);
+        }
+
         /*
-        if (hashed)
-            return (res);
+        if (int)
+            return (secret);
         */
 
         return (messageDigest);

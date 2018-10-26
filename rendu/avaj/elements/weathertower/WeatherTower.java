@@ -21,7 +21,7 @@ public class WeatherTower extends Tower {
     }
 
     public void runSimulation(int nbSimulation) throws AvajException, IOException {
-        while (nbSimulation >= 0) {
+        while (nbSimulation > 0) {
             changeWeather();
             nbSimulation -= 1;
         }
