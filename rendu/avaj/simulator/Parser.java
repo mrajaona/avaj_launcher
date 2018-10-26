@@ -45,4 +45,5 @@ class Parser {
 
         return ( new ParsedData(simNum, parsed) );
     }
+    
 }

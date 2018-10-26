@@ -4,7 +4,6 @@ import avaj.elements.flyable.Flyable;
 
 import avaj.exceptions.InvalidAircraftTypeException;
 import avaj.exceptions.InvalidCoordinatesException;
-import avaj.exceptions.InvalidHeightException;
 
 import java.util.Map;
 import java.util.HashMap;
