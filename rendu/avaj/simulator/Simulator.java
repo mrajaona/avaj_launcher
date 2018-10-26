@@ -1,9 +1,10 @@
 package avaj.simulator;
 
-import avaj.elements.aircraft.AircraftFactory;
-import avaj.elements.flyable.Flyable;
-import avaj.elements.weathertower.WeatherTower;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
+import java.io.IOException;
 import avaj.exceptions.AvajException;
 
 import avaj.exceptions.DefaultException;
@@ -11,11 +12,9 @@ import avaj.exceptions.NotEnoughArgsException;
 import avaj.exceptions.TooManyArgsException;
 import avaj.exceptions.InvalidFileException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.io.IOException;
-
-import java.util.ListIterator; // DEBUG
+import avaj.elements.aircraft.AircraftFactory;
+import avaj.elements.flyable.Flyable;
+import avaj.elements.weathertower.WeatherTower;
 
 public class Simulator {
 

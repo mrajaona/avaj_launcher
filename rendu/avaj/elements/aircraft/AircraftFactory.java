@@ -1,15 +1,15 @@
 package avaj.elements.aircraft;
 
-import avaj.elements.flyable.Flyable;
-
-import avaj.exceptions.InvalidAircraftTypeException;
-import avaj.exceptions.InvalidCoordinatesException;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
 import avaj.exceptions.AvajException;
+
+import avaj.exceptions.InvalidAircraftTypeException;
+import avaj.exceptions.InvalidCoordinatesException;
+
+import avaj.elements.flyable.Flyable;
 
 public class AircraftFactory {
 

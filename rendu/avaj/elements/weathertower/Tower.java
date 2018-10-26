@@ -1,14 +1,14 @@
 package avaj.elements.weathertower;
 
+import java.util.ArrayList;
+
+import java.io.IOException;
+import avaj.exceptions.AvajException;
+
 import avaj.elements.flyable.Flyable;
 import avaj.elements.aircraft.Coordinates;
 
 import avaj.simulator.OutputManager;
-
-import java.util.ArrayList;
-
-import avaj.exceptions.AvajException;
-import java.io.IOException;
 
 public class Tower {
 

@@ -1,14 +1,14 @@
 package avaj.elements.aircraft;
 
+import java.lang.Long;
+
+import java.io.IOException;
+import avaj.exceptions.AvajException;
+
 import avaj.exceptions.TooManyAircraftsException;
 import avaj.exceptions.InvalidAircraftTypeException;
 
 import avaj.simulator.OutputManager;
-
-import java.lang.Long;
-
-import avaj.exceptions.AvajException;
-import java.io.IOException;
 
 public class Aircraft {
 

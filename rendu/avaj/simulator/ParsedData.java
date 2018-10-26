@@ -1,11 +1,11 @@
 package avaj.simulator;
 
-import avaj.exceptions.AvajException;
-import avaj.exceptions.InvalidRunNumberException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
+
+import avaj.exceptions.AvajException;
+import avaj.exceptions.InvalidRunNumberException;
 
 class ParsedData {
     

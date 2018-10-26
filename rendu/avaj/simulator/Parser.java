@@ -1,11 +1,12 @@
 package avaj.simulator;
 
-import avaj.exceptions.AvajException;
-import avaj.exceptions.InvalidFileException;
-import avaj.exceptions.DefaultException;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
+
+import avaj.exceptions.AvajException;
+
+import avaj.exceptions.InvalidFileException;
+import avaj.exceptions.DefaultException;
 
 class Parser {
 
@@ -17,15 +18,15 @@ class Parser {
         if (firstLine.size() != 1)
             throw ( new InvalidFileException() );
 
-        int simNum = Integer.parseInt(Md5.decrypt(firstLine.get(0)));
+        int simNum = Integer.parseInt(firstLine.get(0));
 
         // remove first line
         lexeme.remove(0);
 
+        // get aircrafts
         ArrayList <ParsedItem> parsed                   = new ArrayList <ParsedItem> ();
         ListIterator < ArrayList <String> > iterator    = lexeme.listIterator();
 
-        // get aircrafts
         while (iterator.hasNext()) {
             ArrayList <String> tmp = iterator.next();
 

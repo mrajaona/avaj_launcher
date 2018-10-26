@@ -1,13 +1,13 @@
 package avaj.simulator;
 
-import avaj.exceptions.AvajException;
-import avaj.exceptions.DefaultException;
-
 import java.util.ArrayList;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
 import java.io.IOException;
+import avaj.exceptions.AvajException;
+
+import avaj.exceptions.DefaultException;
 
 class Reader {
 

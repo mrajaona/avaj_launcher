@@ -1,9 +1,9 @@
 package avaj.elements.flyable;
 
-import avaj.elements.weathertower.WeatherTower;
-
-import avaj.exceptions.AvajException;
 import java.io.IOException;
+import avaj.exceptions.AvajException;
+
+import avaj.elements.weathertower.WeatherTower;
 
 public interface Flyable {
 

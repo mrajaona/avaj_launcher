@@ -1,5 +1,10 @@
 package avaj.elements.aircraft;
 
+import java.io.IOException;
+import avaj.exceptions.AvajException;
+
+import avaj.exceptions.InvalidWeatherException;
+
 import avaj.elements.aircraft.Aircraft;
 import avaj.elements.flyable.Flyable;
 
@@ -8,11 +13,6 @@ import avaj.elements.aircraft.Coordinates;
 
 import avaj.elements.weatherprovider.WeatherProvider;
 import avaj.elements.aircraft.AircraftFactory;
-
-import avaj.exceptions.InvalidWeatherException;
-
-import avaj.exceptions.AvajException;
-import java.io.IOException;
 
 public class Baloon extends Aircraft implements Flyable {
 

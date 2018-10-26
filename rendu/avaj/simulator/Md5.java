@@ -1,7 +1,5 @@
 package avaj.simulator;
 
-import avaj.elements.aircraft.AircraftFactory;
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
@@ -10,6 +8,9 @@ import java.security.MessageDigest;
 import javax.xml.bind.DatatypeConverter;
 
 import java.security.NoSuchAlgorithmException;
+
+import avaj.elements.aircraft.AircraftFactory;
+
 
 class Md5 {
 

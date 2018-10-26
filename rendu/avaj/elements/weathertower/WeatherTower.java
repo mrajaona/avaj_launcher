@@ -5,8 +5,8 @@ import avaj.elements.weatherprovider.WeatherProvider;
 
 import avaj.simulator.OutputManager;
 
-import avaj.exceptions.AvajException;
 import java.io.IOException;
+import avaj.exceptions.AvajException;
 
 public class WeatherTower extends Tower {
 

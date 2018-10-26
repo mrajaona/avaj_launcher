@@ -1,17 +1,17 @@
 package avaj.simulator;
 
-import avaj.exceptions.DefaultException;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.OpenOption;
 import java.nio.file.StandardOpenOption;
 import java.nio.charset.StandardCharsets;
 import java.io.BufferedWriter;
 
-import avaj.exceptions.AvajException;
 import java.io.IOException;
+import avaj.exceptions.AvajException;
+
+import avaj.exceptions.DefaultException;
 
 public class OutputManager {
 
