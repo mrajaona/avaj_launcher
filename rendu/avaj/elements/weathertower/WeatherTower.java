@@ -18,16 +18,18 @@ public class WeatherTower extends Tower {
     }
 
     void changeWeather() throws AvajException, IOException {
-        OutputManager.writeToFile(""); // cleaner input
-        if (Simulator.verbose)
-            OutputManager.verbose("Updating weather");
         conditionsChanged();
     }
 
     public void runSimulation(int nbSimulation) throws AvajException, IOException {
-        while (nbSimulation > 0) {
+        int i = 1;
+
+        while (i <= nbSimulation) {
+            OutputManager.writeToFile(""); // cleaner input
+            if (Simulator.verbose)
+                OutputManager.verbose("Updating weather (" + i + "/" + nbSimulation + ")");
             changeWeather();
-            nbSimulation -= 1;
+            i += 1;
         }
     }
 }
