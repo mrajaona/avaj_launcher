@@ -35,10 +35,10 @@ class Parser {
             parsed.add(
                 new ParsedItem(
                     Md5.decrypt(tmp.get(0)), // type 
-                    Md5.decrypt(tmp.get(1)), // name
-                    Md5.decrypt(tmp.get(2)), // longitude
-                    Md5.decrypt(tmp.get(3)), // latitude
-                    Md5.decrypt(tmp.get(4))  // height  
+                    tmp.get(1),              // name
+                    tmp.get(2),              // longitude
+                    tmp.get(3),              // latitude
+                    tmp.get(4)               // height  
                 )
             );
         }

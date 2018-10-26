@@ -13,8 +13,8 @@ import java.security.NoSuchAlgorithmException;
 
 class Md5 {
 
-    private static final Map<String, String> md5AircraftHashes = initMd5AircraftHashes();
-    private static final Map<String, String> initMd5AircraftHashes() {
+    private static final Map<String, String> md5Hashes = initMd5Hashes();
+    private static final Map<String, String> initMd5Hashes() {
         HashMap<String, String> hashMap = new HashMap<String, String>();
 
         hashMap.put(encrypt(AircraftFactory.JETPLANE), AircraftFactory.JETPLANE);
@@ -24,26 +24,12 @@ class Md5 {
         return (Collections.unmodifiableMap(hashMap));
     }
 
-    private static final Map<String, String> md5NumericHashes = initMd5NumericHashes();
-    private static final Map<String, String> initMd5NumericHashes() {
-        HashMap<String, String> hashMap = new HashMap<String, String>();
-
-        return (Collections.unmodifiableMap(hashMap));
-    }
-
     static String decrypt(String messageDigest) {
         String secret;
 
-        secret = md5AircraftHashes.get(messageDigest);
-        if (secret != null) {
-            System.out.println(secret);
+        secret = md5Hashes.get(messageDigest);
+        if (secret != null)
             return (secret);
-        }
-
-        /*
-        if (int)
-            return (secret);
-        */
 
         return (messageDigest);
     }
