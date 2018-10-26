@@ -39,6 +39,10 @@ public class Aircraft {
         OutputManager.writeToFile(identify() + ": " + message);
     }
 
+    protected void verbose(final String message) throws AvajException, IOException {
+        OutputManager.verbose(identify() + ": " + message);
+    }
+
     public String identify() throws AvajException {
     	if ( type.isEmpty() )
     		throw ( new InvalidAircraftTypeException() );

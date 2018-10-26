@@ -14,19 +14,27 @@ import avaj.elements.aircraft.Coordinates;
 import avaj.elements.weatherprovider.WeatherProvider;
 import avaj.elements.aircraft.AircraftFactory;
 
+import avaj.simulator.Simulator;
+import avaj.simulator.OutputManager;
+
 public class JetPlane extends Aircraft implements Flyable {
 
     private static final String TYPE = AircraftFactory.JETPLANE;
     private WeatherTower weatherTower;
 
-    JetPlane(String name, Coordinates coordinates) throws AvajException {
+    JetPlane(String name, Coordinates coordinates) throws AvajException, IOException {
         super(name, coordinates);
         type = TYPE;
+        if (Simulator.verbose)
+            OutputManager.verbose("Created " + identify() + " at " + coordinates.getCoordStr());
     }
 
     @Override
     public void updateConditions() throws AvajException, IOException {
         final String weather = weatherTower.getWeather(coordinates);
+
+        if (Simulator.verbose)
+            verbose("Moving from " + coordinates.getCoordStr() + " (" + weather + ")");
 
         switch (weather) {
             case WeatherProvider.RAIN :
@@ -49,6 +57,9 @@ public class JetPlane extends Aircraft implements Flyable {
             default :
                 throw ( new InvalidWeatherException() );
         }
+
+        if (Simulator.verbose)
+            verbose("Moved to " + coordinates.getCoordStr());
 
         if (coordinates.getHeight() == 0) {
             land();

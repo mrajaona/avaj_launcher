@@ -54,4 +54,8 @@ public class Coordinates {
         height = checkHeight(height + modifier);
     }
 
+    public String getCoordStr() {
+        return ("[" + longitude + " " + latitude + " " + height + "]");
+    }
+
 }

@@ -1,6 +1,5 @@
 package avaj.simulator;
 
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -46,6 +45,10 @@ public class OutputManager {
         } else {
             throw (new DefaultException() );
         }
+    }
+
+    public static void verbose(String message) throws AvajException, IOException {
+        writeToFile("   [verbose] " + message);
     }
 
 }

@@ -8,6 +8,8 @@ import avaj.simulator.OutputManager;
 import java.io.IOException;
 import avaj.exceptions.AvajException;
 
+import avaj.simulator.Simulator;
+
 public class WeatherTower extends Tower {
 
     public String getWeather(Coordinates coordinates) {
@@ -17,6 +19,8 @@ public class WeatherTower extends Tower {
 
     void changeWeather() throws AvajException, IOException {
         OutputManager.writeToFile(""); // cleaner input
+        if (Simulator.verbose)
+            OutputManager.verbose("Updating weather");
         conditionsChanged();
     }
 

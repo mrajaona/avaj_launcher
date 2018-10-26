@@ -18,13 +18,21 @@ import avaj.elements.weathertower.WeatherTower;
 
 public class Simulator {
 
+    private static final String VERBOSE_OPTION = "verbose=on";
+    public static boolean verbose = false;
+
     public static void main(String [] args) {
         try {
 
             if (args.length == 0)
                 throw ( new NotEnoughArgsException() );
-            else if (args.length < 1)
-                throw ( new TooManyArgsException() );
+            else if (args.length > 1) {
+                if (args.length == 2 && args[1].equals(VERBOSE_OPTION)) {
+                    verbose = true;
+                } else {
+                    throw ( new TooManyArgsException() );
+                }
+            }
 
             // Reader
             String fileName = new String(args[0]);
@@ -59,7 +67,6 @@ public class Simulator {
             System.out.println("Exception");
             e.printStackTrace(System.out);
         }
-
     }
 
     private static void run(ParsedData data) throws AvajException, IOException {

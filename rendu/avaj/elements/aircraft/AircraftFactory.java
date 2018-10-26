@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
 
+import java.io.IOException;
 import avaj.exceptions.AvajException;
 
 import avaj.exceptions.InvalidAircraftTypeException;
@@ -30,7 +31,7 @@ public class AircraftFactory {
         newMap.put(
             JETPLANE,
             new FlyableCreator() {
-                public Flyable make(final String name, final Coordinates coord) throws AvajException {
+                public Flyable make(final String name, final Coordinates coord) throws AvajException, IOException {
                     return (new JetPlane(name, coord));
                 }
             }
@@ -39,7 +40,7 @@ public class AircraftFactory {
         newMap.put(
             HELICOPTER,
             new FlyableCreator() {
-                public Flyable make(final String name, final Coordinates coord) throws AvajException {
+                public Flyable make(final String name, final Coordinates coord) throws AvajException, IOException {
                     return (new Helicopter(name, coord));
                 }
             }
@@ -48,7 +49,7 @@ public class AircraftFactory {
         newMap.put(
             BALOON,
             new FlyableCreator() {
-                public Flyable make(final String name, final Coordinates coord) throws AvajException {
+                public Flyable make(final String name, final Coordinates coord) throws AvajException, IOException {
                     return (new Baloon(name, coord));
                 }
             }
@@ -57,7 +58,7 @@ public class AircraftFactory {
         return (Collections.unmodifiableMap(newMap));
     }
 
-	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) throws AvajException {
+	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) throws AvajException, IOException {
         if (
             longitude < Coordinates.COORD_MIN
             || latitude < Coordinates.COORD_MIN
@@ -79,7 +80,7 @@ public class AircraftFactory {
 	}
 
     private interface FlyableCreator {
-        public Flyable make(final String name, final Coordinates coord) throws AvajException;
+        public Flyable make(final String name, final Coordinates coord) throws AvajException, IOException;
     }
 
 }
