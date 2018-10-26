@@ -15,6 +15,15 @@ class Lexer {
 
         while (iterator.hasNext()) {
             line = Arrays.asList(iterator.next().split(" "));
+
+            /*
+            // Print md5
+            for (String word : line) {
+                System.out.print(Md5.encrypt(word) + " ");
+            }
+                System.out.println("");
+            */
+
             lexeme.add(new ArrayList <String> (line));
         }
 

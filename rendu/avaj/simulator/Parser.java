@@ -17,9 +17,7 @@ class Parser {
         if (firstLine.size() != 1)
             throw ( new InvalidFileException() );
 
-        int simNum = Integer.parseInt(firstLine.get(0));
-        // DEBUG
-        System.out.println(Md5.encrypt(firstLine.get(0)));
+        int simNum = Integer.parseInt(Md5.decrypt(firstLine.get(0)));
 
         // remove first line
         lexeme.remove(0);
@@ -36,11 +34,11 @@ class Parser {
 
             parsed.add(
                 new ParsedItem(
-                    tmp.get(0), // type 
-                    tmp.get(1), // name
-                    tmp.get(2), // longitude
-                    tmp.get(3), // latitude
-                    tmp.get(4)  // height  
+                    Md5.decrypt(tmp.get(0)), // type 
+                    Md5.decrypt(tmp.get(1)), // name
+                    Md5.decrypt(tmp.get(2)), // longitude
+                    Md5.decrypt(tmp.get(3)), // latitude
+                    Md5.decrypt(tmp.get(4))  // height  
                 )
             );
         }
