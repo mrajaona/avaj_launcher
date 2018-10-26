@@ -23,8 +23,7 @@ public class WeatherProvider {
         return (weatherProvider);
     }
 
-    // This could be static, but UML says otherwise
-    public String getCurrentWeather(final Coordinates coordinates) {
+    public String getCurrentWeather(Coordinates coordinates) {
         int seed = coordinates.getLongitude() + coordinates.getLatitude() - coordinates.getHeight();
         seed = seed / 5;
         seed = seed < 0 ? -seed : seed;

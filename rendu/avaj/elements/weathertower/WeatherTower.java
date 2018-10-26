@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class WeatherTower extends Tower {
 
-    public String getWeather(final Coordinates coordinates) {
+    public String getWeather(Coordinates coordinates) {
         final WeatherProvider provider    = WeatherProvider.getProvider();
         return( provider.getCurrentWeather(coordinates) );
     }

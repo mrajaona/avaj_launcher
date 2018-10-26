@@ -21,7 +21,7 @@ public class Aircraft {
 
 	private Aircraft() {}
 
-	protected Aircraft(final String n, final Coordinates c) throws AvajException {
+	protected Aircraft(String n, Coordinates c) throws AvajException {
 		name 		= n;
 		coordinates	= c;
 		id			= nextId();

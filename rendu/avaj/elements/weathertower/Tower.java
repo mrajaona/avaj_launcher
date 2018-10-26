@@ -18,12 +18,12 @@ public class Tower {
         OutputManager.writeToFile("Tower says: " + message);
     }
 
-    public void register(final Flyable flyable) throws AvajException, IOException {
+    public void register(Flyable flyable) throws AvajException, IOException {
         observers.add(flyable);
         log(flyable.identify() + " registered to weather tower.");
     }
 
-    public void unregister(final Flyable flyable) throws AvajException, IOException {
+    public void unregister(Flyable flyable) throws AvajException, IOException {
         observers.remove(flyable);
         log(flyable.identify() + " unregistered from weather tower.");
     }

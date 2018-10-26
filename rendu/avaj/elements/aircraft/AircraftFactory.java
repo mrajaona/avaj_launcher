@@ -58,7 +58,7 @@ public class AircraftFactory {
         return (Collections.unmodifiableMap(newMap));
     }
 
-	public static Flyable newAircraft(final String type, final String name, int longitude, int latitude, int height) throws AvajException {
+	public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height) throws AvajException {
         if (
             longitude < Coordinates.COORD_MIN
             || latitude < Coordinates.COORD_MIN

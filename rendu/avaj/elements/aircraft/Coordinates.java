@@ -24,7 +24,6 @@ public class Coordinates {
 
     private Coordinates() {}
 
-    // Initialized by AircraftFactory
     Coordinates(int lo, int la, int he) {
         longitude   = checkCoord(lo);
         latitude    = checkCoord(la);
