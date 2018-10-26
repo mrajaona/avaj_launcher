@@ -19,7 +19,7 @@ import java.util.ListIterator; // DEBUG
 
 public class Simulator {
 
-    public static void main(String [] args) throws AvajException, IOException {
+    public static void main(String [] args) {
         try {
 
             if (args.length == 0)
@@ -51,9 +51,14 @@ public class Simulator {
             run(parsedData);
 
         } catch (AvajException e) {
-            e.printStackTrace();
+            System.out.println("AvajException");
+            e.printStackTrace(System.out);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("IOException");
+            e.printStackTrace(System.out);
+        } catch (Exception e) {
+            System.out.println("Exception");
+            e.printStackTrace(System.out);
         }
 
     }

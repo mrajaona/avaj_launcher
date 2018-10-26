@@ -18,6 +18,8 @@ class Parser {
             throw ( new InvalidFileException() );
 
         int simNum = Integer.parseInt(firstLine.get(0));
+        // DEBUG
+        System.out.println(Md5.encrypt(firstLine.get(0)));
 
         // remove first line
         lexeme.remove(0);
@@ -45,5 +47,5 @@ class Parser {
 
         return ( new ParsedData(simNum, parsed) );
     }
-    
+
 }
